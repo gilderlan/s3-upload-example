@@ -1,0 +1,11 @@
+<h1>Upload to S3</h1>
+<form action='<%= "https://#{@bucket}.s3.amazonaws.com/" %>' method="post" enctype="multipart/form-data">
+  <input type="hidden" name="key" value="uploads/${filename}">
+  <input type="hidden" name="AWSAccessKeyId" value='<%= @aws_access_key %>'>
+  <input type="hidden" name="acl" value="private">
+  <input type="hidden" name="success_action_redirect" value='<%= @confirmation_page %>'>
+  <input type="hidden" name="policy" value='<%= @policy %>'>
+  <input type="hidden" name="signature" value='<%= @signature %>'>
+  <input type="file" name="file"> <br />
+  <input type="submit" value="Send file">
+</form>
