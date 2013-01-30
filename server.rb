@@ -2,6 +2,9 @@ require 'rubygems'
 require 'sinatra'
 require 'json'
 require "active_support/core_ext/numeric/time"
+require 'base64'
+require 'openssl'
+require 'digest/sha1'
 
 get '/' do
   @bucket = "YOUR BUCKET"
